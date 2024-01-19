@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    export let data;
+    const {planets} = data;
+    console.log(planets)
+</script>
+<nav>
+    <ul>
+        {#each planets as planet}
+            <li>
+                <a href="/{planet.id}">{planet.name}</a>
+            </li>
+        {/each}
+    </ul>
+</nav>
